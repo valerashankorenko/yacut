@@ -13,10 +13,10 @@
 Пользовательский вариант короткой ссылки не должен превышать 16 символов.
 
 ## Автор проекта:
-Валерий Шанкоренко👇<br/>
+Валерий Шанкоренко<br/>
 Github: [Valera Shankorenko](https://github.com/valerashankorenko)<br/>
-Telegram: 📱 [@valeron007](https://t.me/valeron007)<br/>
-E-mail: 📧 valerashankorenko@yandex.by<br/>
+Telegram:[@valeron007](https://t.me/valeron007)<br/>
+E-mail:valerashankorenko@yandex.by<br/>
 
 ## Стек технологий
 - [Python](https://www.python.org/)

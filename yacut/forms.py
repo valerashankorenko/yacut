@@ -2,6 +2,9 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, URLField
 from wtforms.validators import URL, DataRequired, Length, Optional, Regexp
 
+MIN_CUSTOM_ID_LENGTH = 1
+MAX_CUSTOM_ID_LENGTH = 16
+
 
 class URLMapForm(FlaskForm):
     """Класс формы проекта."""
@@ -13,8 +16,9 @@ class URLMapForm(FlaskForm):
     )
     custom_id = StringField(
         'Ваш вариант короткой ссылки',
-        validators=[Length(1, 16), Optional(), Regexp(
-            r'^[A-Za-z0-9]+$',
-            message='Можно использовать только [A-Za-z0-9]')]
+        validators=[Length(MIN_CUSTOM_ID_LENGTH, MAX_CUSTOM_ID_LENGTH),
+                    Optional(),
+                    Regexp(r'^[A-Za-z0-9]+$',
+                           message='Можно использовать только [A-Za-z0-9]')]
     )
     submit = SubmitField('Создать')

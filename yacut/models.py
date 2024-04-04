@@ -11,10 +11,10 @@ class URLMap(db.Model):
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
 
     def to_dict(self):
-        return dict(
-            url=self.original,
-            short_link=f'http://localhost/{self.short}',
-        )
+        return {
+            'url': self.original,
+            'short_link': f'http://localhost/{self.short}',
+        }
 
     def from_dict(self, data):
         attribute = {'url': 'original', 'custom_id': 'short'}

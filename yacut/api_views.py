@@ -8,6 +8,8 @@ from .models import URLMap
 from .utils import get_unique_short_id
 from .validators import validate_url
 
+MAX_SHORT_ID_LENGTH = 16
+
 
 @app.route('/api/id/', methods=['POST'])
 def add_url():
@@ -37,7 +39,7 @@ def add_url():
     short_id = data.get('custom_id') or get_unique_short_id()
     if short_id is None:
         short_id = get_unique_short_id()
-    elif not validate_url(short_id) or len(short_id) > 16:
+    elif not validate_url(short_id) or len(short_id) > MAX_SHORT_ID_LENGTH:
         raise InvalidAPIUsage('Указано недопустимое имя для короткой ссылки')
 
     db.session.add(url)
